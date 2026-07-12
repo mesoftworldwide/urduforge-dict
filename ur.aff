@@ -1,0 +1,113 @@
+SET UTF-8
+
+# Urdu character frequency order for suggestion scoring
+TRY اےیورٹیہکلمنبسقفغعظطضصشچجحخھدڈذڑزژٹپبآںؤئاث
+
+# Similar-looking character groups for Damerau-Levenshtein suggestions
+MAP 12
+MAP اآع
+MAP بپتث
+MAP حخہھ
+MAP دذڈزضظ
+MAP رڑزژ
+MAP سصث
+MAP شچج
+MAP طت
+MAP عغ
+MAP قک
+MAP نں
+MAP ويؤئےی
+
+# Common Urdu spelling mistake replacements
+REP 22
+REP ا آ
+REP ب پ
+REP ت ط
+REP ث س
+REP ج چ
+REP ح ھ
+REP ح ہ
+REP خ ھ
+REP د ڈ
+REP ذ ز
+REP س ص
+REP ش چ
+REP ض ز
+REP ط ت
+REP ظ ز
+REP ع ا
+REP غ خ
+REP ق ک
+REP ک گ
+REP ہ ھ
+REP ی ے
+REP ے ی
+
+# Keep case — no Urdu word should be capitalized
+KEEPCASE
+
+# Compound word handling for hyphenated Urdu compounds
+BREAK 1
+BREAK -
+
+# Word characters beyond the standard Unicode letter class
+WORDCHARS ء-ي
+
+# Prefix rules for productive derivational morphology
+# بے- (be-) negation prefix: e.g., بے + فائدہ → بےفائدہ (useless)
+PFX B N 1
+PFX B 0 بے .
+
+# نا- (nā-) negation prefix: e.g., نا + مناسب → نا مناسب (inappropriate)
+PFX N N 1
+PFX N 0 نا .
+
+# لا- (lā-) without prefix: e.g., لا + تعلق → لاتعلق (unrelated)
+PFX L N 1
+PFX L 0 لا .
+
+# با- (bā-) with prefix: e.g., با + عزت → باعزت (respectful)
+PFX K N 1
+PFX K 0 با .
+
+# ہم- (ham-) co-prefix: e.g., ہم + وطن → ہم وطن (compatriot)
+PFX M N 1
+PFX M 0 ہم .
+
+# Suffix rules for plural formation
+# ات (āt) — Arabic feminine plural: e.g., طالبہ → طالبات
+SFX T N 1
+SFX T 0 ات .
+
+# ین (yēn) — feminine plural: e.g., کتاب → کتابیں
+SFX Y N 1
+SFX Y 0 ین .
+
+# ین (īn) — masculine rational plural: e.g., مسلمان → مسلمین
+SFX I N 1
+SFX I 0 ین .
+
+# ں (ōn) — oblique plural: e.g., بچہ → بچوں
+SFX O N 1
+SFX O 0 ں .
+
+# Suffix rules for derivational morphology
+# ی (ī) — adjective/noun derivation: e.g., پاکستان → پاکستانی (Pakistani)
+SFX J N 1
+SFX J 0 ی .
+
+# دار (dār) — possessor suffix: e.g., پردہ → پردہ دار (veiled)
+SFX R N 1
+SFX R 0 دار .
+
+# کار (kār) — doer suffix: e.g., کام → کامکار (worker)
+SFX U N 1
+SFX U 0 کار .
+
+# گار (gār) — doer suffix: e.g., وفا → وفاگار (loyal)
+SFX G N 1
+SFX G 0 گار .
+
+# باز (bāz) — inclination suffix: e.g., جوئے → جوئے باز (gambler)
+SFX Z N 1
+SFX Z 0 باز .
