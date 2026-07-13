@@ -1,9 +1,9 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "release_date": "2026-07-13",
-  "download_url": "https://github.com/mesoftworldwide/urduforge-dict/releases/download/v1.1.0/urduforge-dict-v1.1.0.zip",
-  "sha256": "35c90521bdbe784283ef7c9f3752096c671c4c126b62717d6ac7569808a4e90e",
-  "word_count": 393908,
-  "changelog": "Added domain vocabulary (Islamic, Scientific, Legal), diacritic normalization, inflected forms",
+  "download_url": "https://github.com/mesoftworldwide/urduforge-dict/releases/download/v1.2.0/urduforge-dict-v1.2.0.zip",
+  "sha256": "7c92773732d6ff670a837df1836a492982bce9cd79f4a220085ea4071dc49392",
+  "word_count": 393942,
+  "changelog": "Added literary, administrative, and medical domain word lists (553 new base words)",
   "min_app_version": "1.3.0"
 }
